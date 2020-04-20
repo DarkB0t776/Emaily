@@ -8,9 +8,9 @@ const router = Router();
 router.post('/api/stripe', requireLogin, async (req, res) => {
   //Create charge
   const charge = await stripe.charges.create({
-    amount: 500,
-    currency: 'usd',
-    description: '$5 for 5 credits',
+    amount: 5000,
+    currency: 'UAH',
+    description: '50 for 5 credits',
     source: req.body.id,
   });
   //Update user model
